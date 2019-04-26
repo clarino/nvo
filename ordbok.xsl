@@ -170,6 +170,17 @@ xmlns:my="my:my">
 <!-- This template writes the entire document into an HTML page -->
 
 <xsl:template match="/">
+	<xsl:variable name="DOCUMENT_NAME">
+		<xsl:choose>
+			<xsl:when test="string($DOCUMENT_NAME)">
+				<xsl:value-of select="$DOCUMENT_NAME"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="'/nvo/index.html'"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	
     <xsl:element name="html">
         <xsl:element name="head">
             <xsl:element name="title">
@@ -1547,16 +1558,7 @@ xmlns:my="my:my">
 	
     <xsl:template name="do_index">
     	<xsl:comment><xsl:value-of select="$DOCUMENT_NAME"/></xsl:comment>
-    	<xsl:variable name="DOCUMENT_NAME">
-    		<xsl:choose>
-    			<xsl:when test="string($DOCUMENT_NAME)">
-    				<xsl:value-of select="$DOCUMENT_NAME"/>
-    			</xsl:when>
-    			<xsl:otherwise>
-    				<xsl:value-of select="'/nvo/index.html'"/>
-    			</xsl:otherwise>
-    		</xsl:choose>
-    	</xsl:variable>
+    	
     	<xsl:element name="a"> 
     		<xsl:attribute name="href">&gandalf_sti;<xsl:value-of select="$DOCUMENT_NAME"/>?bokstav=A</xsl:attribute>A<xsl:text> </xsl:text> 
     	</xsl:element>
