@@ -22,10 +22,6 @@
         xml = loadXMLDoc("index.xml");
         xsl = loadXMLDoc("ordbok.xsl");
         // code for IE
-        if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
-          ex = xml.transformNode(xsl);
-          document.getElementById("main").innerHTML = ex;
-        } else if (document.implementation && document.implementation.createDocument){
           // code for Chrome, Firefox, Opera, etc.
           xsltProcessor = new XSLTProcessor();
           xsltProcessor.importStylesheet(xsl);
@@ -50,7 +46,7 @@
           document.getElementById("main").appendChild(resultDocument);
         }
 
-      }
+      
     </script>
   </head>
   <body onload="displayResult()">
