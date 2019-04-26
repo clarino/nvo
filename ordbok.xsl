@@ -40,7 +40,7 @@ xmlns:my="my:my">
     <xsl:param name="QPI"/>
     <xsl:param name="CONTENT_TYPE"/>
     <xsl:param name="DOCUMENT_FILENAME"/>
-    <xsl:param name="DOCUMENT_NAME"/>
+    <xsl:param name="DOCUMENT_NAME" select="'/nvo/index.html'"/>
     <xsl:param name="DOCUMENT_PATH"/>
     <xsl:param name="DOCUMENT_ROOT"/>
     <xsl:param name="DOCUMENT_URL"/>
