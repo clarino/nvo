@@ -40,7 +40,7 @@ xmlns:my="my:my">
     <xsl:param name="QPI"/>
     <xsl:param name="CONTENT_TYPE"/>
     <xsl:param name="DOCUMENT_FILENAME"/>
-    <xsl:param name="DOCUMENT_NAME" select="'/nvo/index.html'"/>
+    <xsl:param name="DOCUMENT_NAME"/>
     <xsl:param name="DOCUMENT_PATH"/>
     <xsl:param name="DOCUMENT_ROOT"/>
     <xsl:param name="DOCUMENT_URL"/>
@@ -1546,6 +1546,17 @@ xmlns:my="my:my">
 	</xsl:template>
 	
     <xsl:template name="do_index">
+    	<xsl:comment><xsl:value-of select="$DOCUMENT_NAME"/></xsl:comment>
+    	<xsl:variable name="DOCUMENT_NAME">
+    		<xsl:choose>
+    			<xsl:when test="string($DOCUMENT_NAME)">
+    				<xsl:value-of select="$DOCUMENT_NAME"/>
+    			</xsl:when>
+    			<xsl:otherwise>
+    				<xsl:value-of select="'/nvo/index.html'"/>
+    			</xsl:otherwise>
+    		</xsl:choose>
+    	</xsl:variable>
     	<xsl:element name="a"> 
     		<xsl:attribute name="href">&gandalf_sti;<xsl:value-of select="$DOCUMENT_NAME"/>?bokstav=A</xsl:attribute>A<xsl:text> </xsl:text> 
     	</xsl:element>
