@@ -1691,7 +1691,8 @@ xmlns:my="my:my">
         	</p><p>Utgave <date>2014</date>, <date>2015</date> med XSLT-transformasjon i nettleseren i stedet for 'Xiki' (test). Øystein Reigem, CLU, <a href="http://www.computing.uni.no/">Uni Research Computing</a>.
         		<!--<a href="mailto:tone.bruvik@aksis.uib.no">Vevsjef</a>.--> 
         		<a href="mailto:oystein.reigem@uni.no">Vevsjef</a>.  <!-- test oystein -->
-        	</p>
+		</p>
+		<p><a href="https://uustatus.no/nb/erklaringer/publisert/f8f0cb45-492b-4885-9ab2-ae01c4001151">Tilgjengelighetserklæring</a></p>
         </xsl:element>
     </xsl:template>
 	
